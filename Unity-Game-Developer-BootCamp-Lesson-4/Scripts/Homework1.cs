@@ -43,7 +43,11 @@ public class Homework1 : MonoBehaviour
     }
     void isPlayerAlive(int playerHealt)
     {
-        if(playerHealt <= 30)
+        if(playerHealt == 0)
+        {
+            Debug.Log("You have death");
+        }
+        else if(playerHealt <= 30)
         {
             Debug.Log("You're in trouble!");
         }
