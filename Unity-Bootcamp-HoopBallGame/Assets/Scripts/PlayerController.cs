@@ -133,4 +133,25 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    public void Play()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Panel.SetActive(false);
+        Time.timeScale = 1; // zamaný tekrar aktif ettik
+    }
+
+    public void Replay()
+    {
+        this.transform.position = transform.position + new Vector3(0, 1f, 0);
+        Panel.SetActive(false);
+        Time.timeScale = 1; // zamaný tekrar aktif ettik
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    public void Stop()
+    {
+        Panel.SetActive(true);
+        Time.timeScale = 0;
+    }
 }
